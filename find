@@ -1,0 +1,62 @@
+#find
+-name
+-perm
+-prune
+-user
+-group
+-mtime -n +n -atime -ctime -nouser -nouser -newer file1 !file2
+-type b d c p l f 
+-size n[c]
+-depth
+-fstype
+-mount
+-follow
+-cpio
+
+find ~ -name "*.txt" -print
+find . -name "*.txt" -print
+find / -name "*.txt" -print
+#
+find . -perm 755 -print
+find . -perm 007 -print
+#
+fint /apps -name "/apps/bin" -prune -o -print
+find ~ -user dave -print
+find /etc -user uucp -print
+find /home -nouser -print
+find /apps -group accts -print
+find / -nogroup -print
+#
+find / -mtime -5 -print
+find / -mtime +3 -print
+find / -newer newest_file_name ! oldest_file_name
+find /etc -type d -print
+find . ! -type d -print
+find /etc -type l -print
+find . -size +1000000c -print
+find /home/apache -size 100c -print
+find / -name "CON.FILE" -depth -print
+find . -name "*.XC" -mount -print
+find . -type f -exec ls -l
+find logs -type f -mtime +5 -exec rm {} \;
+find / -type f -print | xargs grep "device"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
